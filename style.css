@@ -26,3 +26,11 @@
 .main {
   padding: 20px;
 }
+
+.quiz {
+  border: 8px solid black;
+}
+
+.submit {
+  margin: 20px 0;
+}
