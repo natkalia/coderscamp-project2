@@ -12,7 +12,6 @@ function quizBuilder() {
     quizBox.appendChild(questionBox);
     function autoNum(x) {
       num = ++num;
-      console.log(num, x);
       x = `${num}. ${x}`;
       return x;
     }
@@ -31,8 +30,8 @@ function quizBuilder() {
       answer = answers[letter];
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
-      answersBoxListItem.innerHTML = `<label>${answer}</label>
-                                     <input type="radio" name="question${num}" value="${answer}">`
+      answersBoxListItem.innerHTML = `<label for="${letter}">${answer}</label>
+                                     <input type="radio" name="question${num}" id="${letter}" value="${letter}">`
     }
   }
   
