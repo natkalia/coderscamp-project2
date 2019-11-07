@@ -1,5 +1,28 @@
+/* Global */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 60px;
+  text-align: center;
+}
+
+.quiz, .results, .submit {
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  padding: 20px;
+}
+
+/* Main */
+.main {
+  padding: 20px;
 }
