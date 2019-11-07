@@ -37,6 +37,7 @@
 .quiz-inner {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -48,7 +49,7 @@ img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  margin: 10px;
+  display: block;
 }
 
 .main p {
@@ -63,5 +64,10 @@ ol li {
   list-style-type: lower-alpha;
   font-size: 1.2rem;
   font-weight: 700;
+  text-align: left;
 }
 
+ol {
+  margin: 10px auto;
+  width: 80%;
+}
