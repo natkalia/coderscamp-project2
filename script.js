@@ -1,33 +1,32 @@
 const questions = [
   {
     question: 'In all low-income countries across the world today, how many girls finish primary school?',
-    options: {
+    image: '',
+    answers: {
       a: '20%',
       b: '40%',
       c: '60%'
     },
-    answer: 'c'
+    correct: 'c'
   },
   {
     question: 'Where does the majority of the world population live?',
-    options: {
+    image: '',
+    answers: {
       a: 'Low-income countries',
       b: 'Middle-income countries',
       c: 'High-income countries'
     },
-    answer: 'b'
+    correct: 'b'
   },
   {
     question: 'In the last 20 years the proportion of the world population living in extreme poverty has?',
-    options: {
+    image: '',
+    answers: {
       a: 'Almost doubled',
       b: 'Remained more or less the same',
       c: 'Almost halved'
     },
-    answer: 'c'
+    correct: 'c'
   }
 ];
-
-
-
-
