@@ -31,9 +31,11 @@ function quizBuilder() {
       answer = answers[letter];
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
-      answersBoxListItem.innerText = answer;
+      answersBoxListItem.innerHTML = `<label>${answer}</label>
+                                     <input type="radio" name="question${num}" value="${answer}">`
     }
   }
+  
 }
 
 quizBuilder();
