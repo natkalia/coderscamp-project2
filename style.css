@@ -27,10 +27,17 @@
   padding: 20px;
 }
 
-.quiz {
-  border: 8px solid black;
+.quiz-outer {
+  border: 2px solid black;
+  padding: 20px;
 }
 
 .submit {
   margin: 20px 0;
+}
+
+img {
+  height: 50%;
+  width: 50%;
+  border: 8px solid black;
 }
