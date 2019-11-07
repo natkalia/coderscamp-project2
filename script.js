@@ -14,14 +14,14 @@ function quizBuilder() {
     imageBox.src = questionImage;
 
     const { answers } = questionsList[item];
+    const answersBoxList = document.createElement("ol");
+    quizBox.appendChild(answersBoxList);
 
     for (letter in answers) {
       answer = answers[letter];
-      const answersBoxList = document.createElement("ul");
       const answersBoxListItem = document.createElement("li");
-      quizBox.appendChild(answersBoxList);
       answersBoxList.appendChild(answersBoxListItem);
-      answersBoxList.innerText = answer;
+      answersBoxListItem.innerText = answer;
     }
   }
 }
