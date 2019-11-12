@@ -2,7 +2,7 @@ const questionsList = {
   questionItem1: {
     questionText: 'In all low-income countries across the world today, how many girls finish primary school?',
     questionImage: 'assets/image-school.jpg',
-    answers: {
+    answersToQuestion: {
       a: '20%',
       b: '40%',
       c: '60%'
@@ -12,7 +12,7 @@ const questionsList = {
   questionItem2: {
     questionText: 'Where does the majority of the world population live?',
     questionImage: 'assets/population.jpg',
-    answers: {
+    answersToQuestion: {
       a: 'Low-income countries',
       b: 'Middle-income countries',
       c: 'High-income countries'
@@ -22,7 +22,7 @@ const questionsList = {
   questionItem3: {
     questionText: 'In the last 20 years the proportion of the world population living in extreme poverty has?',
     questionImage: 'assets/poverty.jpg',
-    answers: {
+    answersToQuestion: {
       a: 'Almost doubled',
       b: 'Remained more or less the same',
       c: 'Almost halved'

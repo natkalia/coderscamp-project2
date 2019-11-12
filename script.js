@@ -5,7 +5,7 @@ function quizBuilder() {
   for (item in questionsList) {
     const { questionText } = questionsList[item];
     const { questionImage } = questionsList[item];
-    const { answers } = questionsList[item];
+    const { answersToQuestion } = questionsList[item];
 
     //creating question with number based on object
     const questionBox = document.createElement("p");
@@ -26,8 +26,8 @@ function quizBuilder() {
     const answersBoxList = document.createElement("ol");
     quizBox.appendChild(answersBoxList);
 
-    for (letter in answers) {
-      answer = answers[letter];
+    for (letter in answersToQuestion) {
+      answer = answersToQuestion[letter];
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
       answersBoxListItem.innerHTML = `<label for="${letter}">${answer}</label>
