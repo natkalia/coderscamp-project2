@@ -1,37 +1,41 @@
 const quizBox = document.querySelector(".quiz-inner");
 
 function quizBuilder() {
-  let num = 0;
+  
   for (item in questionsList) {
+    // create and append elements to show question, image, possible answers 
+    const questionBox = document.createElement("p");
+    const imageBox = document.createElement("img");
+    const answersBoxList = document.createElement("ol");
+    quizBox.appendChild(questionBox);
+    quizBox.appendChild(imageBox);
+    quizBox.appendChild(answersBoxList);
+    
+    // destructure values from objects to get question, image, answers
     const { questionText } = questionsList[item];
     const { questionImage } = questionsList[item];
     const { answersToQuestion } = questionsList[item];
 
-    //creating question with number based on object
-    const questionBox = document.createElement("p");
-    quizBox.appendChild(questionBox);
-    function autoNum(x) {
+    // function to change question format to string with auto number
+    let num = 0;
+    function autoNum(str) {
       num = ++num;
-      x = `${num}. ${x}`;
-      return x;
+      str = `${num}. ${str}`;
+      return str;
     }
-    questionBox.innerText = autoNum(questionText);
 
-    //creating image based on object
-    const imageBox = document.createElement("img");
-    quizBox.appendChild(imageBox);
+    // insert question and image to new elements
+    questionBox.innerText = autoNum(questionText);
     imageBox.src = questionImage;
     
-    //creating answers based on object
-    const answersBoxList = document.createElement("ol");
-    quizBox.appendChild(answersBoxList);
-
+    // get possible answers looping the object, and insert it with input code to new element
+    // unresolved issue with input name and input and label for/id to be created dynamically
     for (letter in answersToQuestion) {
-      answer = answersToQuestion[letter];
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
-      answersBoxListItem.innerHTML = `<label for="${letter}">${answer}</label>
-                                     <input type="radio" name="question${num}" id="${letter}" value="${letter}">`
+      answer = answersToQuestion[letter];
+      answersBoxListItem.innerHTML = `<label for="letter">${answer}</label>
+                                     <input type="radio" name="question" id="letter" value="${letter}">`
     }
   }
   
