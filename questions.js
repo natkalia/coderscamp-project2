@@ -1,5 +1,5 @@
-const questionsList = {
-  questionItem1: {
+const questionsList = [
+  {
     questionText: 'In all low-income countries across the world today, how many girls finish primary school?',
     questionImage: 'assets/image-school.jpg',
     answersToQuestion: {
@@ -9,7 +9,7 @@ const questionsList = {
     },
     correct: 'c'
   },
-  questionItem2: {
+  {
     questionText: 'Where does the majority of the world population live?',
     questionImage: 'assets/population.jpg',
     answersToQuestion: {
@@ -19,7 +19,7 @@ const questionsList = {
     },
     correct: 'b'
   },
-  questionItem3: {
+  {
     questionText: 'In the last 20 years the proportion of the world population living in extreme poverty has?',
     questionImage: 'assets/poverty.jpg',
     answersToQuestion: {
@@ -29,4 +29,4 @@ const questionsList = {
     },
     correct: 'c'
   }
-};
+];
