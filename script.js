@@ -27,9 +27,28 @@ function quizBuilder() {
       answersBoxListItem.innerHTML = `<label for="question-${indexItem + 1}-answer-${letter}">                                         ${answer}</label>
                                       <input type="radio" name="question-${indexItem + 1}" id="question-${indexItem + 1}-answer-${letter}" value="${letter}">`
     }
-  });
-  
+  }); 
 }
-
 quizBuilder();
+
+// listen for click and filter which answers are checked - in progress
+
+const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+const button = document.querySelector('input[type="submit"]');
+
+function getUserAnswers(e) {
+  e.preventDefault(); // prevent from sumbit
+  
+  const userInputsArray = Array.from(userInputsCollection);
+  
+  userInputsArray.filter( function(element, index, array) {
+    if (userInputsArray[index].checked === true) {
+      console.log(userInputsArray[index].id + " is checked");
+    } else {
+      console.log(userInputsArray[index].id + " is not checked");
+    }
+    });
+  }
+
+button.addEventListener('click', getUserAnswers);
 
