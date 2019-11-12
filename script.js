@@ -24,11 +24,12 @@ function quizBuilder() {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
       answer = answersToQuestion[letter];
-      answersBoxListItem.innerHTML = `<label for="letter-${indexItem + 1}">${answer}</label>
-                                     <input type="radio" name="question-${indexItem + 1}" id="letter-${indexItem + 1}" value="${letter}">`
+      answersBoxListItem.innerHTML = `<label for="question-${indexItem + 1}-answer-${letter}">                                         ${answer}</label>
+                                      <input type="radio" name="question-${indexItem + 1}" id="question-${indexItem + 1}-answer-${letter}" value="${letter}">`
     }
   });
   
 }
 
 quizBuilder();
+
