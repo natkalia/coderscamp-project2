@@ -25,7 +25,7 @@ function quizBuilder() {
       answersBoxList.appendChild(answersBoxListItem);
       answer = answersToQuestion[letter];
       answersBoxListItem.innerHTML = `<label for="question-${questionNumber}-answer-${letter}">                                         ${answer}</label>
-                                      <input type="radio" name="question-${questionNumber}" id="question-${questionNumber}-answer-${letter}" value="${letter}">`
+                                      <input type="radio" name="${questionNumber}" id="question-${questionNumber}-answer-${letter}" value="${letter}">`
     }
   }); 
 }
@@ -34,33 +34,45 @@ quizBuilder();
 /* listen for click and filter which answers are checked - in progress */
 const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 const button = document.querySelector('input[type="submit"]');
+const resultBox = document.querySelector(".results");
 
 function getUserResult() {
-  /* get all inputs (checked and unchecked) as an array */
-  const allInputsArray = Array.from(userInputsCollection);
-
-  /* verify which input fields are checked */
-  let checkedInputsArray = allInputsArray.filter( (element, index) => {
-    return allInputsArray[index].checked === true;
-  });
 
   /* map array with quiz questions to get only correct answers */ 
   let corrAnswersArray = questionsList.map(function (element) {
-    return element.correct;
+    return (element.questionNumber + element.correct);
   });
 
-  /* verify correct answers - first idea for solution
-   to be solved: what to do with unchecked input */
-  checkedInputsArray.forEach( item => {
-    let counter = 0;
-    if (item.value == corrAnswersArray[counter]) {
-      console.log("you said " + item.value + " and correct answer is " + corrAnswersArray[counter] + " so you won!");
-    } else {
-      console.log("you said " + item.value + " and correct answer is " + corrAnswersArray[counter] + " so you lost!");
-    }
-    counter++;
-  });
+  /* get all user inputs (checked and unchecked) as an array */
+  const allInputsArray = Array.from(userInputsCollection);
 
+  /* format user inputs to array with user answers in same format as correct answers */
+  let userAnswersArray = allInputsArray
+    .map( element => {
+      return (element.name + element.value + element.checked);
+    })
+    .filter( element => {
+      return element.includes("true");
+    })
+    .map( element => {
+      return (element.slice(0, -4)); 
+    });
+
+    /* compare user answers with correct answers - problem with unchecked items to be solved - in progress */
+    let goodUserAnswers = [];
+    let badUserAnswers = [];
+    for (let i = 0; i < corrAnswersArray.length; i++) {
+      if (corrAnswersArray[i] === userAnswersArray[i]) {
+        goodUserAnswers.push(userAnswersArray[i]);
+        console.log(corrAnswersArray[i] + userAnswersArray[i] + " are good answers");
+      } else {
+        badUserAnswers.push(userAnswersArray[i]);
+        console.log(corrAnswersArray[i] + userAnswersArray[i] + " are bad answers");
+      }
+    } 
+
+    /* insert simple result format to DOM - in progress */
+    resultBox.innerHTML=`Your good answers are: ${goodUserAnswers} and your bad answers are: ${badUserAnswers}`;
 }
 
 button.addEventListener('click', getUserResult);
