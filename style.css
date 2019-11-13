@@ -97,3 +97,12 @@ ol {
   padding: 20px;
   border: 4px solid var(--dark-color);
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {}
+
+/* Tablet Styles */
+ @media only screen and (min-width: 401px) and (max-width: 960px) {}
+
+/* Desktop Styles */
+ @media only screen and (min-width: 961px) {}
