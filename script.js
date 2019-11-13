@@ -4,7 +4,7 @@ function quizBuilder() {
   
   questionsList.forEach( (currentItem, indexItem) => {
 
-    // create and append elements to show question, image, possible answers 
+    /* create and append elements to show question, image, possible answers */
     const questionBox = document.createElement("p");
     const imageBox = document.createElement("img");
     const answersBoxList = document.createElement("ol");
@@ -12,14 +12,14 @@ function quizBuilder() {
     quizBox.appendChild(imageBox);
     quizBox.appendChild(answersBoxList);
       
-    // destructure values from objects to get question, image, answers from each object in array
+    /* destructure values from objects to get question, image, answers from each object in array */
     const { questionText, questionImage, answersToQuestion, questionNumber } = questionsList[indexItem]; 
 
-    // insert question and image to new elements
+    /* insert question and image to new elements */
     questionBox.innerText = `${indexItem + 1}. ${questionText}`;
     imageBox.src = questionImage;
     
-    // get possible answers looping the object, and insert it with input code to new element
+    /* get possible answers looping the object, and insert it with input code to new element */
     for (letter in answersToQuestion) {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
@@ -31,7 +31,7 @@ function quizBuilder() {
 }
 quizBuilder();
 
-// listen for click and filter which answers are checked - in progress
+/* listen for click and filter which answers are checked - in progress */
 const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 const button = document.querySelector('input[type="submit"]');
 
