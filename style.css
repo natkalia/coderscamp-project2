@@ -1,5 +1,11 @@
-/* Global */
+/* Global variables */
+:root {
+  --text-font: "Rubik", sans-serif;
+  --dark-color: #000;
+  --light-color: #fff;
+}
 
+/* Global */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,10 +13,10 @@
 }
 
 .wrapper {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--text-font);
 }
 
 .quiz, .results, .submit {
