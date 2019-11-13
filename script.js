@@ -38,17 +38,12 @@ const button = document.querySelector('input[type="submit"]');
 
 function getUserAnswers(e) {
   e.preventDefault(); // prevent from sumbit
-  
-  const userInputsArray = Array.from(userInputsCollection);
-  
-  userInputsArray.filter( function(element, index, array) {
-    if (userInputsArray[index].checked === true) {
-      console.log(userInputsArray[index].id + " is checked");
-    } else {
-      console.log(userInputsArray[index].id + " is not checked");
-    }
-    });
-  }
+  const allInputsArray = Array.from(userInputsCollection);
+  let checkedInputsArray = allInputsArray.filter( function(element, index) {
+    return allInputsArray[index].checked === true;
+  });
+  console.log(checkedInputsArray)
+} 
 
 button.addEventListener('click', getUserAnswers);
 
