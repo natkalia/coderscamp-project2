@@ -38,41 +38,34 @@ const resultBox = document.querySelector(".results");
 
 function getUserResult() {
 
-  /* map array with quiz questions to get only correct answers */ 
-  let corrAnswersArray = questionsList.map(function (element) {
-    return (element.questionNumber + element.correct);
+  /* create object for each user with his/her answers */
+  function Person() {
+  }
+  let person = new Person();
+
+  let userAnswersArray = Array.from(userInputsCollection)
+    .forEach( element => {
+      if (element.checked === true) {
+        person[element.name] = element.value;
+      }
+  });
+    
+  questionsList.forEach((element, index) => { 
+    if (person.hasOwnProperty(element.questionNumber)) {
+      if (person[element.questionNumber] === element.correct) {
+        console.log(`Question no.${element.questionNumber}: user answered ${person[element.questionNumber]}. The correct answer is: ${element.correct}. So you were RIGHT!`);
+      } else {
+        console.log(`Question no.${element.questionNumber}: user answered ${person[element.questionNumber]}. The correct answer is: ${element.correct}. So user's answer is WRONG.`);
+      }
+    } else {
+      console.log("not all answers");
+    }
   });
 
-  /* get all user inputs (checked and unchecked) as an array */
-  const allInputsArray = Array.from(userInputsCollection);
+  /* insert simple result format to DOM - in progress */
 
-  /* format user inputs to array with user answers in same format as correct answers */
-  let userAnswersArray = allInputsArray
-    .map( element => {
-      return (element.name + element.value + element.checked);
-    })
-    .filter( element => {
-      return element.includes("true");
-    })
-    .map( element => {
-      return (element.slice(0, -4)); 
-    });
+  /* count correct answers and bad answers - in progress */
 
-    /* compare user answers with correct answers - problem with unchecked items to be solved - in progress */
-    let goodUserAnswers = [];
-    let badUserAnswers = [];
-    for (let i = 0; i < corrAnswersArray.length; i++) {
-      if (corrAnswersArray[i] === userAnswersArray[i]) {
-        goodUserAnswers.push(userAnswersArray[i]);
-        console.log(corrAnswersArray[i] + userAnswersArray[i] + " are good answers");
-      } else {
-        badUserAnswers.push(userAnswersArray[i]);
-        console.log(corrAnswersArray[i] + userAnswersArray[i] + " are bad answers");
-      }
-    } 
-
-    /* insert simple result format to DOM - in progress */
-    resultBox.innerHTML=`Your good answers are: ${goodUserAnswers} and your bad answers are: ${badUserAnswers}`;
 }
 
 button.addEventListener('click', getUserResult);
