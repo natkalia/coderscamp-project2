@@ -1,16 +1,20 @@
-const quizBox = document.querySelector(".quiz-inner");
+const quizOuter = document.querySelector(".quiz-outer");
 
 function quizBuilder() {
   
   questionsList.forEach( (currentItem, indexItem) => {
 
     /* create and append elements to show question, image, possible answers */
+    const quizBox = document.createElement("div");
     const questionBox = document.createElement("p");
     const imageBox = document.createElement("img");
     const answersBoxList = document.createElement("ol");
+    quizOuter.appendChild(quizBox);
     quizBox.appendChild(questionBox);
     quizBox.appendChild(imageBox);
     quizBox.appendChild(answersBoxList);
+
+    quizBox.setAttribute("class", "quiz-box");
       
     /* destructure values from objects to get question, image, answers from each object in array */
     const { questionText, questionImage, answersToQuestion, questionNumber } = questionsList[indexItem]; 
