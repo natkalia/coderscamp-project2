@@ -1,5 +1,6 @@
 const questionsList = [
   {
+    questionNumber: 1,
     questionText:
       "In all low-income countries across the world today, how many girls finish primary school?",
     questionImage: "assets/girls-school.jpg",
@@ -11,6 +12,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 2,
     questionText: "Where does the majority of the world population live?",
     questionImage: "assets/income-level.jpg",
     answersToQuestion: {
@@ -21,6 +23,7 @@ const questionsList = [
     correct: "b"
   },
   {
+    questionNumber: 3,
     questionText:
       "In the last 20 years the proportion of the world population living in extreme poverty has?",
     questionImage: "assets/poverty-population.jpg",
@@ -32,6 +35,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 4,
     questionText: "What is the life expectancy of the world today?",
     questionImage: "assets/life-expectancy.jpg",
     answersToQuestion: {
@@ -42,6 +46,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 5,
     questionText:
       "There are 2 billion children in the world today, aged 0 to 15 years old. How many children will there be in the year 2100, according to the United Nations?",
     questionImage: "assets/children-number.jpg",
@@ -53,6 +58,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 6,
     questionText:
       "The UN predicts that by 2100 the world population will have increased by another 4 billion people. What is the main reason?",
     questionImage: "assets/increase-population.jpg",
@@ -64,6 +70,7 @@ const questionsList = [
     correct: "b"
   },
   {
+    questionNumber: 7,
     questionText:
       "How did the number of deaths per year from natural disasters change over the last hundred years?",
     questionImage: "assets/disaster-deaths.jpg",
@@ -75,6 +82,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 8,
     questionText:
       "There are roughly 7 billion people in the world today, which option most accurately represents where they live?",
     questionImage: "assets/population-continents.jpg",
@@ -89,6 +97,7 @@ const questionsList = [
     correct: "a"
   },
   {
+    questionNumber: 9,
     questionText:
       "How many of the world’s 1-year-old children today have been vaccinated against some disease?",
     questionImage: "assets/vaccination.jpg",
@@ -100,6 +109,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 10,
     questionText:
       "Worldwide, 30-year-old men have spent 10 years in school, on average. How many years have women of the same age spent in school?",
     questionImage: "assets/women-school.jpg",
@@ -111,6 +121,7 @@ const questionsList = [
     correct: "a"
   },
   {
+    questionNumber: 11,
     questionText:
       "In 1996, tigers, giant pandas, and black rhinos were all listed as endangered. How many of these three species are more critically endangered today?",
     questionImage: "assets/animals-danger.jpg",
@@ -122,6 +133,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 12,
     questionText:
       "How many people in the world have SOME access to electricity?",
     questionImage: "assets/electricity.jpg",
@@ -133,6 +145,7 @@ const questionsList = [
     correct: "c"
   },
   {
+    questionNumber: 13,
     questionText:
       "Global climate experts believe that, over the next 100 years, the average temperature will...",
     questionImage: "assets/climate-change.jpg",
