@@ -2,7 +2,7 @@ const quizOuter = document.querySelector(".quiz-outer");
 
 function quizBuilder() {
   
-  questionsList.forEach( (currentItem, indexItem) => {
+  questionsList.forEach( (question, index) => {
 
     /* create and append elements to show question, image, possible answers */
     const quizInner = document.createElement("div");
@@ -18,10 +18,10 @@ function quizBuilder() {
     quizInner.setAttribute("class", "quiz-inner");
       
     /* destructure values to get question, image, answers from each question object in array */
-    const { questionText, questionImage, answersToQuestion, questionNumber } = questionsList[indexItem]; 
+    const { questionText, questionImage, answersToQuestion, questionNumber } = question; 
 
     /* insert question and image to new elements */
-    questionBox.innerText = `${indexItem + 1}. ${questionText}`;
+    questionBox.innerText = `${questionNumber}. ${questionText}`;
     imageBox.src = questionImage;
     
     /* get possible answers looping the question objects, and insert them with input code to new element */
@@ -34,7 +34,6 @@ function quizBuilder() {
     }
   }); 
 }
-
 
 /* listen for click and filter which answers are checked - in progress */
 const userInputsCollection = document.querySelectorAll('input[type="radio"]');
