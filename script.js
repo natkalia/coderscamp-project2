@@ -1,4 +1,9 @@
+/* get necessary elements from DOM */
+
 const quizOuter = document.querySelector(".quiz-outer");
+const button = document.querySelector('input[type="submit"]');
+const resultBox = document.querySelector(".results");
+const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 
 function quizBuilder() {
   
@@ -34,11 +39,6 @@ function quizBuilder() {
     }
   }); 
 }
-
-/* listen for click and filter which answers are checked - in progress */
-const userInputsCollection = document.querySelectorAll('input[type="radio"]');
-const button = document.querySelector('input[type="submit"]');
-const resultBox = document.querySelector(".results");
 
 function getUserResult() {
 
