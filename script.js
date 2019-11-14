@@ -102,7 +102,10 @@ function getUserResult() {
   /* insert simple result format to DOM */
   resultBox.style.display="block";
   resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length} !</p>
-                        <p>See above to compare your answers with correct ones !</p>`;
+                        <p>See below to compare your answers with correct ones !</p>`;
+
+  /* move user to top to let him/her see results */
+  window.scrollTo(0,0);
 }
 
 
