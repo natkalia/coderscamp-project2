@@ -14,16 +14,17 @@ function quizBuilder() {
     quizInner.appendChild(imageBox);
     quizInner.appendChild(answersBoxList);
 
+    /* add class with styles */
     quizInner.setAttribute("class", "quiz-inner");
       
-    /* destructure values from objects to get question, image, answers from each object in array */
+    /* destructure values to get question, image, answers from each question object in array */
     const { questionText, questionImage, answersToQuestion, questionNumber } = questionsList[indexItem]; 
 
     /* insert question and image to new elements */
     questionBox.innerText = `${indexItem + 1}. ${questionText}`;
     imageBox.src = questionImage;
     
-    /* get possible answers looping the object, and insert it with input code to new element */
+    /* get possible answers looping the question objects, and insert them with input code to new element */
     for (letter in answersToQuestion) {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
@@ -33,7 +34,7 @@ function quizBuilder() {
     }
   }); 
 }
-quizBuilder();
+
 
 /* listen for click and filter which answers are checked - in progress */
 const userInputsCollection = document.querySelectorAll('input[type="radio"]');
@@ -72,4 +73,7 @@ function getUserResult() {
 
 }
 
+
+/* execute functions and listen for further events */ 
+quizBuilder();
 button.addEventListener('click', getUserResult);
