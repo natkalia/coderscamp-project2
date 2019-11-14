@@ -111,19 +111,20 @@ label {
   font-size: 1rem;
   padding: 8px;
   font-weight: 700;
-  background-color: var(--medium-color);
+  background-color: var(--light-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 4px solid var(--dark-color);
 }
 
 label:hover {
-  background-color: var(--green-color);
+  background-color: var(--medium-color);
   cursor: pointer;
 }
 
 input[type="radio"]:checked + label {
-  background-color:  var(--green-color);
+  background-color:  var(--medium-color);
 }
 
 .answered {
@@ -151,8 +152,7 @@ input[type="radio"]:checked + label {
 
 .button:hover {
   cursor: pointer;
-  background-color: var(--green-color);
-  color: white;
+  background-color: var(--medium-color);
 }
 
 /* Results */
