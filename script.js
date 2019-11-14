@@ -1,9 +1,7 @@
 /* get necessary elements from DOM */
-
 const quizOuter = document.querySelector(".quiz-outer");
 const button = document.querySelector('input[type="submit"]');
 const resultBox = document.querySelector(".results");
-const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 
 function quizBuilder() {
   
@@ -42,6 +40,8 @@ function quizBuilder() {
 
 function getUserResult() {
 
+  const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+
   /* create object for each user with his/her answers */
   function Person() {
   }
@@ -71,7 +71,6 @@ function getUserResult() {
   /* count correct answers and bad answers - in progress */
 
 }
-
 
 /* execute functions and listen for further events */ 
 quizBuilder();
