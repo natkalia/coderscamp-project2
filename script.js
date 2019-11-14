@@ -52,37 +52,42 @@ function markAnswered() {
 }
 
 function getUserResult() {
-
+  /* get necessary dynamically created input elements from DOM */
    const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+   let userAnswersArray = Array.from(userInputsCollection);
 
-  /* create object for each user with his/her answers */
+  /* create object for each user */
   function Person() {
   }
   let person = new Person();
 
-  let userAnswersArray = Array.from(userInputsCollection)
-    .forEach( element => {
+  /* add checked answers with question numbers to user object */
+  userAnswersArray.forEach( element => {
       if (element.checked === true) {
         person[element.name] = element.value;
       }
   });
-    
-  questionsList.forEach((element, index) => { 
+
+  /* create variables to store user results */
+  let goodAnswersArray = [];
+  let badAnswersArray = [];
+
+  /* verify if user answered given question from question list and check if user answer is correct */
+  questionsList.forEach((element) => { 
     if (person.hasOwnProperty(element.questionNumber)) {
       if (person[element.questionNumber] === element.correct) {
-        console.log(`Question no.${element.questionNumber}: user answered ${person[element.questionNumber]}. The correct answer is: ${element.correct}. So you were RIGHT!`);
+        goodAnswersArray.push(element.questionNumber);
       } else {
-        console.log(`Question no.${element.questionNumber}: user answered ${person[element.questionNumber]}. The correct answer is: ${element.correct}. So user's answer is WRONG.`);
+        badAnswersArray.push(element.questionNumber);
       }
     } else {
-      console.log("not all answers");
+      badAnswersArray.push(element.questionNumber);
     }
   });
 
   /* insert simple result format to DOM - in progress */
-
-  /* count correct answers and bad answers - in progress */
-
+  resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length}</p>
+                        <p>See above to compare your answers with correct ones !</p>`;
 }
 
 /* execute functions and listen for further events */ 
