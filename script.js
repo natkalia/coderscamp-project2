@@ -99,10 +99,33 @@ function getUserResult() {
     }
   }
 
-  /* insert simple result format to DOM */
+  /* insert results to DOM and show message depending on the user result */
   resultBox.style.display="block";
-  resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length} !</p>
-                        <p>See below to compare your answers with correct ones !</p>`;
+
+  const messageStandard1 = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length} !</p>`;
+  const messageStandard2 = `<p>See below to compare your answers with correct ones!</p>`;
+
+  const messageHigh = `${messageStandard1}
+                      <p>Wow! This is impressive!</p>
+                      ${messageStandard2}`;
+
+  const  messageMedium = `${messageStandard1}
+                          <p>Not bad!</p>
+                          ${messageStandard2}`;
+
+  const messageLow = `${messageStandard1}
+                      <p>Disappointed? Well, many celebrities did not go above that score too!</p>
+                      ${messageStandard2}`;
+                  
+  const ratio = goodAnswersArray.length / (badAnswersArray.length + goodAnswersArray.length);
+
+  if (ratio >= 0.7) {
+    resultBox.innerHTML = messageHigh;
+  } else if (ratio >= 0.5 && ratio >= 0.5) {
+    resultBox.innerHTML = messageMedium;
+  } else {
+    resultBox.innerHTML = messageLow;
+  }
 
   /* move user to top to let him/her see results */
   window.scrollTo(0,0);
