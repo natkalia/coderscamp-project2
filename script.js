@@ -32,8 +32,8 @@ function quizBuilder() {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
       answer = answersToQuestion[letter];
-      answersBoxListItem.innerHTML = `<label for="${questionNumber}${letter}">${answer}</label>
-                                      <input type="radio" name="${questionNumber}" id="${questionNumber}${letter}" value="${letter}">`
+      answersBoxListItem.innerHTML = `<input type="radio" name="${questionNumber}" id="${questionNumber}${letter}" value="${letter}">
+                                      <label for="${questionNumber}${letter}">${answer}</label>`
     }
   }); 
 }
