@@ -3,6 +3,7 @@
   --text-font: "Rubik", sans-serif;
   --dark-color: #000;
   --light-color: #fff;
+  --medium-color: #d3d3d3;
 }
 
 /* Global */
@@ -89,6 +90,10 @@ ol li {
 ol {
   margin: 10px auto;
   width: 80%;
+}
+
+.answered {
+  background-color: var(--medium-color);
 }
 
 /* Results */

@@ -38,9 +38,22 @@ function quizBuilder() {
   }); 
 }
 
+function markAnswered() {
+  /* get necessary dynamically created input elements from DOM */
+  const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+  let userAnswersArray = Array.from(userInputsCollection);
+
+  /* add event listener to check which question is answered and change style */
+  userAnswersArray.forEach( (element) => {
+    element.addEventListener('click', function() {
+      element.parentElement.parentElement.parentElement.classList.add("answered");
+    });
+  });
+}
+
 function getUserResult() {
 
-  const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 
   /* create object for each user with his/her answers */
   function Person() {
@@ -74,4 +87,7 @@ function getUserResult() {
 
 /* execute functions and listen for further events */ 
 quizBuilder();
+
+markAnswered();
+
 button.addEventListener('click', getUserResult);
