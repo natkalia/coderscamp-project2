@@ -1,6 +1,7 @@
 /* get necessary elements from DOM */
 const quizOuter = document.querySelector(".quiz-outer");
-const button = document.querySelector('input[type="submit"]');
+const btnSubmit = document.querySelector('.submit');
+const btnReset = document.querySelector('.reset');
 const resultBox = document.querySelector(".results");
 
 function quizBuilder() {
@@ -103,9 +104,23 @@ function getUserResult() {
                         <p>See above to compare your answers with correct ones !</p>`;
 }
 
+
+function resetAnswers() {
+  const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+  for (let i=0; i<userInputsCollection.length; i++) {
+
+    userInputsCollection[i].checked=false;
+    userInputsCollection[i].parentElement.classList.remove("good-answer");
+    userInputsCollection[i].parentElement.classList.remove("bad-answer");
+    userInputsCollection[i].parentElement.parentElement.parentElement.classList.remove("answered");
+  }
+}
+
 /* execute functions and listen for further events */ 
 quizBuilder();
 
 markAnswered();
 
-button.addEventListener('click', getUserResult);
+btnSubmit.addEventListener('click', getUserResult);
+
+btnReset.addEventListener('click', resetAnswers);
