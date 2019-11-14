@@ -25,7 +25,7 @@ function quizBuilder() {
     const { questionText, questionImage, answersToQuestion, questionNumber } = question; 
 
     /* insert question and image to new elements */
-    questionBox.innerText = `${questionNumber}. ${questionText}`;
+    questionBox.innerHTML= `<h4>Question ${questionNumber} of ${questionsList.length}</h4><h5>${questionText}</h5>`;
     imageBox.src = questionImage;
     
     /* get possible answers looping the question objects, and insert them with input code to new element */
