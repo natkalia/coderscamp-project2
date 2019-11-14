@@ -44,7 +44,7 @@ header p {
   align-items: center;
 }
 
-.quiz-box {
+.quiz-inner {
   margin: 10px auto;
   padding: 20px;
   display: flex;

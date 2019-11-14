@@ -5,16 +5,16 @@ function quizBuilder() {
   questionsList.forEach( (currentItem, indexItem) => {
 
     /* create and append elements to show question, image, possible answers */
-    const quizBox = document.createElement("div");
+    const quizInner = document.createElement("div");
     const questionBox = document.createElement("p");
     const imageBox = document.createElement("img");
     const answersBoxList = document.createElement("ol");
-    quizOuter.appendChild(quizBox);
-    quizBox.appendChild(questionBox);
-    quizBox.appendChild(imageBox);
-    quizBox.appendChild(answersBoxList);
+    quizOuter.appendChild(quizInner);
+    quizInner.appendChild(questionBox);
+    quizInner.appendChild(imageBox);
+    quizInner.appendChild(answersBoxList);
 
-    quizBox.setAttribute("class", "quiz-box");
+    quizInner.setAttribute("class", "quiz-inner");
       
     /* destructure values from objects to get question, image, answers from each object in array */
     const { questionText, questionImage, answersToQuestion, questionNumber } = questionsList[indexItem]; 
@@ -28,7 +28,7 @@ function quizBuilder() {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
       answer = answersToQuestion[letter];
-      answersBoxListItem.innerHTML = `<label for="question-${questionNumber}-answer-${letter}">                                         ${answer}</label>
+      answersBoxListItem.innerHTML = `<label for="question-${questionNumber}-answer-${letter}">${answer}</label>
                                       <input type="radio" name="${questionNumber}" id="question-${questionNumber}-answer-${letter}" value="${letter}">`
     }
   }); 
