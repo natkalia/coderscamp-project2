@@ -68,17 +68,6 @@ header p {
   filter: drop-shadow(10px 10px 10px var(--dark-color));
 }
 
-.button {
-  margin: 20px auto;
-  border: 4px solid var(--dark-color);
-  background-color: var(--light-color);
-  width: 200px;
-  height: 80px;
-  font-family: var(--text-font);
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
 img {
   height: 100%;
   width: 100%;
@@ -149,12 +138,33 @@ input[type="radio"]:checked + label {
   color: red;
 }
 
-/* Results */
-.results {
-  margin: 20px 10px;
-  padding: 20px;
+.button {
+  margin: 20px auto;
   border: 4px solid var(--dark-color);
   background-color: var(--light-color);
+  width: 40%;
+  height: 150px;
+  font-family: var(--text-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--green-color);
+  color: white;
+}
+
+/* Results */
+.results {
+  display: none;
+  margin: 20px 10px;
+  padding-top: 40px;
+  width: 100%;
+  height: 200px;
+  border: 4px solid var(--dark-color);
+  background-color: var(--light-color);
+  font-size: 2rem;
 }
 
 /* Mobile Styles */

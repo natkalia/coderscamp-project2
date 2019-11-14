@@ -100,6 +100,7 @@ function getUserResult() {
   }
 
   /* insert simple result format to DOM */
+  resultBox.style.display="block";
   resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length} !</p>
                         <p>See above to compare your answers with correct ones !</p>`;
 }
@@ -108,7 +109,6 @@ function getUserResult() {
 function resetAnswers() {
   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
   for (let i=0; i<userInputsCollection.length; i++) {
-
     userInputsCollection[i].checked=false;
     userInputsCollection[i].parentElement.classList.remove("good-answer");
     userInputsCollection[i].parentElement.classList.remove("bad-answer");
