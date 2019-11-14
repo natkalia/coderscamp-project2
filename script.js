@@ -131,15 +131,19 @@ function getUserResult() {
   window.scrollTo(0,0);
 }
 
-
 function resetAnswers() {
   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+
+  /* remove style corresponding to user answers */
   for (let i=0; i<userInputsCollection.length; i++) {
     userInputsCollection[i].checked=false;
     userInputsCollection[i].parentElement.classList.remove("good-answer");
     userInputsCollection[i].parentElement.classList.remove("bad-answer");
     userInputsCollection[i].parentElement.parentElement.parentElement.classList.remove("answered");
   }
+
+  /* remove results from top page */
+  resultBox.style.display="none";
 }
 
 /* execute functions and listen for further events */ 
