@@ -32,8 +32,8 @@ function quizBuilder() {
       const answersBoxListItem = document.createElement("li");
       answersBoxList.appendChild(answersBoxListItem);
       answer = answersToQuestion[letter];
-      answersBoxListItem.innerHTML = `<label for="question-${questionNumber}-answer-${letter}">${answer}</label>
-                                      <input type="radio" name="${questionNumber}" id="question-${questionNumber}-answer-${letter}" value="${letter}">`
+      answersBoxListItem.innerHTML = `<label for="${questionNumber}${letter}">${answer}</label>
+                                      <input type="radio" name="${questionNumber}" id="${questionNumber}${letter}" value="${letter}">`
     }
   }); 
 }
@@ -85,7 +85,20 @@ function getUserResult() {
     }
   });
 
-  /* insert simple result format to DOM - in progress */
+  /* change style to show good and bad answers - in progress - now there is no comparison with user answers */
+  let corrNumbersLetters = questionsList.map((element) => { 
+    return element.questionNumber + element.correct;
+  });
+
+  for (let i=0; i<userInputsCollection.length; i++) {
+    if (corrNumbersLetters.includes(userInputsCollection[i].id) === true) {
+      userInputsCollection[i].parentElement.classList.add("good-answer");
+    } else {
+      userInputsCollection[i].parentElement.classList.add("bad-answer");
+    }
+  }
+
+  /* insert simple result format to DOM */
   resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length}</p>
                         <p>See above to compare your answers with correct ones !</p>`;
 }

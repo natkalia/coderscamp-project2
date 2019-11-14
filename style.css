@@ -98,6 +98,14 @@ ol {
   background-color: var(--medium-color);
 }
 
+.good-answer {
+  color: green;
+}
+
+.bad-answer {
+  color: red;
+}
+
 /* Results */
 .results {
   margin: 20px 10px;
