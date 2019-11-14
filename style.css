@@ -14,10 +14,6 @@
   padding: 0;
 }
 
-body {
-  background-image: url("assets/optical-illusion.jpg");
-}
-
 .wrapper {
   width: 50%;
   margin: 0 auto;
