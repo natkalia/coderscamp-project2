@@ -99,7 +99,7 @@ function getUserResult() {
   }
 
   /* insert simple result format to DOM */
-  resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length}</p>
+  resultBox.innerHTML = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length} !</p>
                         <p>See above to compare your answers with correct ones !</p>`;
 }
 
