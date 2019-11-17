@@ -117,7 +117,7 @@ function getUserResult() {
 
   if (ratio >= 0.7) {
     resultBox.innerHTML = messageHigh;
-  } else if (ratio >= 0.5 && ratio >= 0.5) {
+  } else if (ratio < 0.7 && ratio >= 0.5) {
     resultBox.innerHTML = messageMedium;
   } else {
     resultBox.innerHTML = messageLow;
