@@ -142,8 +142,8 @@ function resetAnswers() {
   /* remove style corresponding to user answers */
   for (let i=0; i<userInputsCollection.length; i++) {
     userInputsCollection[i].checked=false;
-    userInputsCollection[i].parentElement.classList.remove('good-answer');
-    userInputsCollection[i].parentElement.classList.remove('bad-answer');
+    userInputsCollection[i].nextElementSibling.classList.remove('good-answer');
+    userInputsCollection[i].nextElementSibling.classList.remove('bad-answer');
     userInputsCollection[i].parentElement.parentElement.parentElement.classList.remove('answered');
   }
 
