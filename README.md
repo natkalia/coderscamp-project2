@@ -52,7 +52,7 @@ The app was created according to CodersCamp guidelines that it should demonstrat
 
 Here some screetshots of quiz in action:
 
-![quiz](https://user-images.githubusercontent.com/49140572/69010400-be736c80-095f-11ea-9a3b-47e3830ea73e.gif)
+![quiz](https://user-images.githubusercontent.com/49140572/69012482-b5da6080-0976-11ea-9c8d-054aba6d0af4.gif)
 
 Hope you will enjoy it!
 
