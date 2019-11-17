@@ -75,7 +75,8 @@ function getUserResult() {
   /* verify if user answered given question and add to good or bad answers array */
   questionsList.forEach(element => { 
     if (person.hasOwnProperty(element.questionNumber)) {
-      if (person[element.questionNumber] === element.correct) {
+      if (person[element.questionNumber] == element.correct) {
+        console.log("yes");
         goodAnswersArray.push(element.questionNumber);
       } else {
         badAnswersArray.push(element.questionNumber);
