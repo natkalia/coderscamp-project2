@@ -1,7 +1,7 @@
 /* get necessary already existing elements from DOM */
 const quizOuter = document.querySelector('.quiz-outer');
-const btnSubmit = document.querySelectorAll('.submit');
-const btnReset = document.querySelectorAll('.reset');
+const btnSubmit = document.querySelector('.submit');
+const btnReset = document.querySelector('.reset');
 const resultBox = document.querySelector('.results');
 
 function quizBuilder() {
@@ -106,8 +106,10 @@ function getUserResult() {
   /* show result box after check answers button is clicked */ 
   resultBox.style.display='block';
 
-  /* create personalized messages depending on level of score */
+  /* show reset button after check answers button is clicked */ 
+  btnReset.style.display='block';
 
+  /* create personalized messages depending on level of score */
   const messageStandard1 = `<h2>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length}.</h2>`;
   const messageStandard2 = `<p>You responded to ${goodAnswersArray.length + badAnswersArray.length - missingAnswersArray.length} question(s) out of ${badAnswersArray.length + goodAnswersArray.length}. No answer was regarded as bad answer in your result.</p>`;
   const messageStandard3 = `<p>See below to compare your answers with correct ones. If you want to try once more, please click reset button.</p>`;
@@ -144,6 +146,9 @@ function resetAnswers() {
     userInputsCollection[i].removeAttribute("disabled");
   }
 
+  /* hide reset button afer reset button is clicked */ 
+  btnReset.style.display='none';
+
   /* remove style corresponding to user answers */
   for (let i=0; i<userInputsCollection.length; i++) {
     userInputsCollection[i].checked=false;
@@ -160,7 +165,5 @@ function resetAnswers() {
 quizBuilder();
 markAnswered();
 
-btnSubmit[0].addEventListener('click', getUserResult);
-btnSubmit[1].addEventListener('click', getUserResult);
-btnReset[0].addEventListener('click', resetAnswers);
-btnReset[1].addEventListener('click', resetAnswers);
+btnSubmit.addEventListener('click', getUserResult);
+btnReset.addEventListener('click', resetAnswers);
