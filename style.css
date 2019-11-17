@@ -1,6 +1,6 @@
 /* Global variables */
 :root {
-  --text-font: "Rubik", sans-serif;
+  --text-font: 'Rubik', sans-serif;
   --dark-color: #000;
   --light-color: #fff;
   --green-color: #008000;
@@ -107,7 +107,7 @@ ol li {
   list-style: none;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   opacity: 0;
   width: 0;
   height: 0;
@@ -133,7 +133,7 @@ label:hover {
   color: var(--light-color);
 }
 
-input[type="radio"]:checked + label {
+input[type='radio']:checked + label {
   background-color: var(--dark-color);
   color: var(--light-color);
 }
