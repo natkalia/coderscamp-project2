@@ -45,7 +45,7 @@ function markAnswered() {
 
   /* add event listener to check which question is answered and change style */
   userAnswersArray.forEach( (element) => {
-    element.addEventListener('click', function() {
+    element.addEventListener('click', () => {
       element.parentElement.parentElement.parentElement.classList.add('answered');
     });
   });
