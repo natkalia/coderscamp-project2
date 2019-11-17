@@ -62,11 +62,11 @@ function getUserResult() {
   const person = new Person();
 
   /* add checked answers (based on checked input) with question numbers (based on input name equal to question number) to user object as properties */
-  userAnswersArray.forEach(element => {
-      if (element.checked === true) {
-        person[element.name] = element.value;
-      }
-  });
+  userAnswersArray
+      .filter( (element) => {
+        return element.checked === true;
+      })
+      .forEach(element => person[element.name] = element.value);
 
   /* create variables with arrays to store user good, bad and missing answers */
   const goodAnswersArray = [];
