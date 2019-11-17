@@ -44,7 +44,7 @@ function markAnswered() {
   const userAnswersArray = Array.from(userInputsCollection);
 
   /* add event listener to check which question is answered and change style */
-  userAnswersArray.forEach( (element) => {
+  userAnswersArray.forEach(element => {
     element.addEventListener('click', () => {
       element.parentElement.parentElement.parentElement.classList.add('answered');
     });
