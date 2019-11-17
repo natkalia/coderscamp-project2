@@ -68,9 +68,10 @@ function getUserResult() {
       }
   });
 
-  /* create variables with arrays to store user good and bad answers */
-  let goodAnswersArray = [];
-  let badAnswersArray = [];
+  /* create variables with arrays to store user good, bad and missing answers */
+  const goodAnswersArray = [];
+  const badAnswersArray = [];
+  const missingAnswersArray = [];
 
   /* verify if user answered given question and add to good or bad answers array */
   questionsList.forEach(element => { 
@@ -81,6 +82,7 @@ function getUserResult() {
         badAnswersArray.push(element.questionNumber);
       }
     } else {
+      missingAnswersArray.push(element.questionNumber);
       badAnswersArray.push(element.questionNumber);
     }
   });
@@ -102,16 +104,18 @@ function getUserResult() {
   resultBox.style.display='block';
 
   const messageStandard1 = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length}.</p>`;
-  const messageStandard2 = `<p>See below to compare your answers with correct ones.</p>`;
+  const messageStandard2 = `<p>You responded to ${goodAnswersArray.length + badAnswersArray.length - missingAnswersArray.length} question(s) out of ${badAnswersArray.length + goodAnswersArray.length}. No answer was regarded as bad answer in your result.</p>`;
+
+  const messageStandard3 = `<p>See below to compare your answers with correct ones.</p>`;
   const messageHigh = `${messageStandard1}
                       <p>Wow, this is impressive.</p>
-                      ${messageStandard2}`;
+                      ${messageStandard2}${messageStandard3}`;
   const  messageMedium = `${messageStandard1}
                           <p>Not bad, but could be better.</p>
-                          ${messageStandard2}`;
+                          ${messageStandard2}${messageStandard3}`;
   const messageLow = `${messageStandard1}
                       <p>Disappointed? Well, many celebrities did not go above that score too.</p>
-                      ${messageStandard2}`;
+                      ${messageStandard2}${messageStandard3}`;
                   
   const ratio = goodAnswersArray.length / (badAnswersArray.length + goodAnswersArray.length);
 

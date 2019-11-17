@@ -53,8 +53,16 @@ header p {
   background-color: var(--dark-color);
   border: 4px solid var(--dark-color);
   filter: drop-shadow(10px 10px 10px var(--dark-color));
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: var(--light-color);
+  text-align: left;
+}
+
+.results p:nth-child(1) {
+  margin: 10px auto;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* Main */
