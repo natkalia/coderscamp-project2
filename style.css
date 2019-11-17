@@ -25,6 +25,34 @@ section {
   margin: 10px auto;
 }
 
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.button {
+  margin: 10px 5px;
+  padding: 40px 10px;
+  border: 4px solid var(--dark-color);
+  filter: drop-shadow(10px 10px 10px var(--dark-color));
+  background-color: var(--light-color);
+  font-family: var(--text-font);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.button:focus {
+  outline: none;
+}
+
 /* Header */
 header {
   margin: 10px auto;
@@ -160,34 +188,6 @@ input[type='radio']:checked + label {
 
 .bad-answer {
   border: 4px solid var(--red-color);
-}
-
-.buttons {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 10px auto;
-}
-
-.button {
-  margin: 10px 5px;
-  padding: 40px 10px;
-  border: 4px solid var(--dark-color);
-  filter: drop-shadow(10px 10px 10px var(--dark-color));
-  background-color: var(--light-color);
-  font-family: var(--text-font);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-.button:focus {
-  outline: none;
 }
 
 /* Mobile Styles */
