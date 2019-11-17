@@ -103,12 +103,13 @@ function getUserResult() {
     userInputsCollection[i].setAttribute("disabled", "true");
   }
 
-  /* insert user result to DOM and show message depending on the user result */
+  /* show result box after check answers button is clicked */ 
   resultBox.style.display='block';
+
+  /* create personalized messages depending on level of score */
 
   const messageStandard1 = `<p>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length}.</p>`;
   const messageStandard2 = `<p>You responded to ${goodAnswersArray.length + badAnswersArray.length - missingAnswersArray.length} question(s) out of ${badAnswersArray.length + goodAnswersArray.length}. No answer was regarded as bad answer in your result.</p>`;
-
   const messageStandard3 = `<p>See below to compare your answers with correct ones. If you want to try once more, please click reset button.</p>`;
   const messageHigh = `${messageStandard1}
                       <p>Wow, this is impressive.</p>
@@ -120,8 +121,8 @@ function getUserResult() {
                       <p>Disappointed? Well, many celebrities did not go above that score too.</p>
                       ${messageStandard2}${messageStandard3}`;
                   
+  /* check the level od user score: high, medium or low and insert proper message to DOM */
   const ratio = goodAnswersArray.length / (badAnswersArray.length + goodAnswersArray.length);
-
   if (ratio >= 0.7) {
     resultBox.innerHTML = messageHigh;
   } else if (ratio < 0.7 && ratio >= 0.5) {
@@ -135,7 +136,7 @@ function getUserResult() {
 }
 
 function resetAnswers() {
-
+  /* get necessary dynamically created input elements from DOM */
   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
 
   /* change style to unblock possibility of changing answers if reset was made */
