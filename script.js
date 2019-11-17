@@ -3,6 +3,7 @@ const quizOuter = document.querySelector('.quiz-outer');
 const btnSubmit = document.querySelector('.submit');
 const btnReset = document.querySelector('.reset');
 const resultBox = document.querySelector('.results');
+const headerBox = document.querySelector('.header');
 
 function quizBuilder() {
   questionsList.forEach( (question, index) => {
@@ -112,7 +113,7 @@ function getUserResult() {
   /* create personalized messages depending on level of score */
   const messageStandard1 = `<h2>Your result is ${goodAnswersArray.length} / ${badAnswersArray.length + goodAnswersArray.length}.</h2>`;
   const messageStandard2 = `<p>You responded to ${goodAnswersArray.length + badAnswersArray.length - missingAnswersArray.length} question(s) out of ${badAnswersArray.length + goodAnswersArray.length}. No answer was regarded as bad answer in your result.</p>`;
-  const messageStandard3 = `<p>See below to compare your answers with correct ones. If you want to try once more, please click reset button.</p>`;
+  const messageStandard3 = `<p>See above to compare your answers with correct ones. If you want to try once more, please click reset button.</p>`;
   const messageHigh = `${messageStandard1}
                       <p>Wow, this is impressive.</p>
                       ${messageStandard2}${messageStandard3}`;
@@ -133,8 +134,8 @@ function getUserResult() {
     resultBox.innerHTML = messageLow;
   }
 
-  /* move user to top to let him/her see results */
-  window.scrollTo(0,0);
+  /* move user to let him/her see results */
+  resultBox.scrollIntoView();
 }
 
 function resetAnswers() {
@@ -159,6 +160,9 @@ function resetAnswers() {
 
   /* remove results from top page */
   resultBox.style.display='none';
+
+  /* move user to top to start again */
+  headerBox.scrollIntoView();
 }
 
 /* execute functions and listen for further events */ 
