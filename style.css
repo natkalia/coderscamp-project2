@@ -5,6 +5,7 @@
   --light-color: #fff;
   --green-color: #008000;
   --red-color: #cd0000;
+  --grey-color: #d3d3d3;
 }
 
 /* Global */
@@ -179,7 +180,7 @@ input[type='radio']:checked + label {
 }
 
 .answered {
-  background-color: lightgrey;
+  background-color: var(--grey-color);
 }
 
 .good-answer {
