@@ -76,7 +76,6 @@ function getUserResult() {
   questionsList.forEach(element => { 
     if (person.hasOwnProperty(element.questionNumber)) {
       if (person[element.questionNumber] == element.correct) {
-        console.log("yes");
         goodAnswersArray.push(element.questionNumber);
       } else {
         badAnswersArray.push(element.questionNumber);
