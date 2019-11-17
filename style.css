@@ -139,7 +139,7 @@ input[type='radio']:checked + label {
 }
 
 .answered {
-  border: 4px dashed var(--dark-color);
+  background-color: lightgrey;
 }
 
 .good-answer {
