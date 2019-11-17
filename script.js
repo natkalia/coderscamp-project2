@@ -30,7 +30,7 @@ function quizBuilder() {
     for (letter in answersToQuestion) {
       const answersBoxListItem = document.createElement('li');
       answersBoxList.appendChild(answersBoxListItem);
-      answer = answersToQuestion[letter];
+      const answer = answersToQuestion[letter];
       answersBoxListItem.innerHTML = `<input type='radio' name='${questionNumber}' value='${letter}' 
                                      id='${questionNumber}${letter}'>
                                      <label for='${questionNumber}${letter}'>${answer}</label>`
@@ -61,7 +61,7 @@ function getUserResult() {
 
   /* add checked answers (based on checked input) with question numbers (based on input name equal to question number) to user object as properties */
   userAnswersArray
-      .filter( (element) => {
+      .filter(element => {
         return element.checked === true;
       })
       .forEach(element => person[element.name] = element.value);
