@@ -137,7 +137,13 @@ function getUserResult() {
 }
 
 function resetAnswers() {
+
   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
+
+  /* change style to unblock possibility of changing answers if reset was made */
+  for (let i=0; i<userInputsCollection.length; i++) {
+    userInputsCollection[i].removeAttribute("disabled");
+  }
 
   /* remove style corresponding to user answers */
   for (let i=0; i<userInputsCollection.length; i++) {
