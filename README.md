@@ -1,8 +1,8 @@
-# Factfullness Quiz Webapp - CodersCamp Project 2
+# Factfulness Quiz Webapp - CodersCamp Project 2
 
 Individual project created for CodersCamp 2019 (Team Warsaw). :bomb:
 This is a simple single-choice quiz web application built with Javascript, HTML, CSS. 
-Quiz questions come from famous Factfullness Quiz created by Hans Rosling.
+Quiz questions come from famous Factfulness Quiz created by Hans Rosling.
 
 **Live:** [https://natkalia.github.io/coderscamp-project2/](https://natkalia.github.io/coderscamp-project2/)
 	
@@ -78,6 +78,6 @@ The app is not compatible with:
 This is the 5th edition od the camp. 
 More info about the camp: [https://coderscamp.edu.pl/](https://coderscamp.edu.pl/)
 
-## About Hans Rosling and Factfullness concept
-It is recommended to read Hans Rosling book to better understand the factfullness concept:\
+## About Hans Rosling and Factfulness concept
+It is recommended to read Hans Rosling book to better understand the factfulness concept:\
 ![book](assets/book.jpg)
