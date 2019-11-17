@@ -100,6 +100,11 @@ function getUserResult() {
     }
   }
 
+  /* change style to block possibility of changing answers at this stage */
+  for (let i=0; i<userInputsCollection.length; i++) {
+    userInputsCollection[i].setAttribute("disabled", "true");
+  }
+
   /* insert user result to DOM and show message depending on the user result */
   resultBox.style.display='block';
 
