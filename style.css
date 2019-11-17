@@ -172,16 +172,17 @@ input[type='radio']:checked + label {
   width: 100%;
   border: 4px solid var(--dark-color);
   filter: drop-shadow(10px 10px 10px var(--dark-color));
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
   font-family: var(--text-font);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 .button:focus {
