@@ -1,7 +1,7 @@
 /* get necessary already existing elements from DOM */
 const quizOuter = document.querySelector('.quiz-outer');
-const btnSubmit = document.querySelector('.submit');
-const btnReset = document.querySelector('.reset');
+const btnSubmit = document.querySelectorAll('.submit');
+const btnReset = document.querySelectorAll('.reset');
 const resultBox = document.querySelector('.results');
 
 function quizBuilder() {
@@ -155,5 +155,7 @@ function resetAnswers() {
 quizBuilder();
 markAnswered();
 
-btnSubmit.addEventListener('click', getUserResult);
-btnReset.addEventListener('click', resetAnswers);
+btnSubmit[0].addEventListener('click', getUserResult);
+btnSubmit[1].addEventListener('click', getUserResult);
+btnReset[0].addEventListener('click', resetAnswers);
+btnReset[1].addEventListener('click', resetAnswers);
