@@ -46,9 +46,10 @@ The app was created according to CodersCamp guidelines that it should demonstrat
 1. This is a simple quiz with only singe-choice answers.
 2. It is not required that user answers all the questions. However, no response is counted as bad response.
 3. When a question is answered by the user, it is marked with some styling to make it easy differentiating between answered and non-answered questions.
-4. After completing the quiz and clicking the button "check answers" user is redirected to top, and his/her results are presented with personalized message. Message depends on the ratio of correct answers to total amswers. Also, all the answers are marked either green or red to show which answers were corrected and which not.
+4. After completing the quiz and clicking the button "check answers" user results are presented with personalized message. Message depends on the ratio of correct answers to total amswers. Also, all the answers are marked either green or red to show which answers were corrected and which not.
 5. User can click "reset quiz" button and play again. All the previous styling used to show if user already answered a question and which answers were correct/incorrect is reset as well.
-6. Button "check answers" is displayed all the time in the app. Reset button is shown only after "check answers" is clicked. Then, if the user decides to click reset button in order to play again, the reset button hides again.
+6. Button "check answers" is displayed all the time in the app. 
+7. Reset button is shown only after "check answers" is clicked. Then, if the user decides to click reset button in order to play again, the reset button hides again.
 
 Here some screetshots of quiz in action:
 
