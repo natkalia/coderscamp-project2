@@ -10,7 +10,7 @@ function quizBuilder() {
 
     /* create and append elements to show question, image, possible answers */
     const quizInner = document.createElement("div");
-    const questionBox = document.createElement("p");
+    const questionBox = document.createElement("div");
     const imageBox = document.createElement("img");
     const answersBoxList = document.createElement("ol");
     quizOuter.appendChild(quizInner);
@@ -25,7 +25,7 @@ function quizBuilder() {
     const { questionText, questionImage, answersToQuestion, questionNumber } = question; 
 
     /* insert question and image to new elements */
-    questionBox.innerHTML= `<h4>Question ${questionNumber} of ${questionsList.length}</h4><h5>${questionText}</h5>`;
+    questionBox.innerHTML= `<h4>Question ${questionNumber} of ${questionsList.length}</h4><p>${questionText}</p>`;
     imageBox.src = questionImage;
     
     /* get possible answers looping the question objects, and insert them with input code to new element */
@@ -93,9 +93,9 @@ function getUserResult() {
 
   for (let i=0; i<userInputsCollection.length; i++) {
     if (corrNumbersLetters.includes(userInputsCollection[i].id) === true) {
-      userInputsCollection[i].parentElement.classList.add("good-answer");
+      userInputsCollection[i].nextElementSibling.classList.add("good-answer");
     } else {
-      userInputsCollection[i].parentElement.classList.add("bad-answer");
+      userInputsCollection[i].nextElementSibling.classList.add("bad-answer");
     }
   }
 

@@ -3,8 +3,8 @@
   --text-font: "Rubik", sans-serif;
   --dark-color: #000;
   --light-color: #fff;
-  --medium-color: #d3d3d3;
-  --green-color: #4a676d;
+  --green-color: #008000;
+  --red-color: #cd0000;
 }
 
 /* Global */
@@ -19,7 +19,6 @@
   margin: 0 auto;
   text-align: center;
   font-family: var(--text-font);
-  font-weight: 700;
 }
 
 section {
@@ -29,20 +28,21 @@ section {
 /* Header */
 header {
   margin: 10px auto;
-  padding: 10px;
-  border: 4px solid var(--dark-color);
+  padding: 0 10px;
   background-color: var(--light-color);
+  border: 4px solid var(--dark-color);
   filter: drop-shadow(10px 10px 10px var(--dark-color));
 }
 
 header h1 {
   margin: 20px auto;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 header p {  
+  margin: 20px auto;
   font-weight: 400;
-  font-size: 1.7rem;
+  font-size: 1.2rem; 
 }
 
 /* Results */
@@ -50,8 +50,8 @@ header p {
   display: none;
   margin: 20px auto;
   padding: 20px;
-  border: 4px solid var(--dark-color);
   background-color: var(--dark-color);
+  border: 4px solid var(--dark-color);
   filter: drop-shadow(10px 10px 10px var(--dark-color));
   font-size: 1.6rem;
   color: var(--light-color);
@@ -60,14 +60,8 @@ header p {
 /* Main */
 .quiz-outer {
   width: 100%;
-}
-
-.quiz-outer {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .quiz-inner {
@@ -76,61 +70,56 @@ header p {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 4px solid var(--dark-color);
   background-color: var(--light-color);
+  border: 4px solid var(--dark-color);
   filter: drop-shadow(10px 10px 10px var(--dark-color));
 }
 
-img {
+.quiz-inner h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.quiz-inner p {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 10px auto;
+}
+
+.quiz-inner img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   display: block;
 }
 
-.main h4 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.main p {
-  font-size: 1.4rem;
-  font-weight: 700;
-  padding: 10px;
-  text-align: justify;
-}
-
 ol {
-  display: flex;
-  justify-content: center;
   margin: 10px auto;
   width: 100%;
-  height: 100%;
 }
 
 ol li {
   flex: 30%;
   display: flex;
   list-style: none;
-  margin: 0 5px;
 }
 
 input[type="radio"] {
   opacity: 0;
-  position: fixed;
   width: 0;
   height: 0;
 }
 
 label {
-  display: inline-block;
   width: 100%;
-  height: 150px;
-  font-size: 1rem;
-  padding: 8px;
-  font-weight: 700;
+  min-height: 60px;
+  font-size: 1.2rem;
+  margin: 5px auto;
+  padding: 6px;
+  font-weight: 400;
   background-color: var(--light-color);
   display: flex;
   flex-direction: column;
@@ -139,54 +128,81 @@ label {
 }
 
 label:hover {
-  background-color: var(--medium-color);
   cursor: pointer;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 input[type="radio"]:checked + label {
-  background-color:  var(--medium-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .answered {
-  border: 4px solid darkorange;
+  border: 4px dashed var(--dark-color);
 }
 
 .good-answer {
-  color: green;
+  border: 4px solid var(--green-color);
 }
 
 .bad-answer {
-  color: red;
+  border: 4px solid var(--red-color);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .button {
-  margin: 20px auto;
+  margin: 10px 5px;
+  padding: 40px 10px;
   border: 4px solid var(--dark-color);
+  filter: drop-shadow(10px 10px 10px var(--dark-color));
   background-color: var(--light-color);
-  width: 40%;
-  height: 150px;
   font-family: var(--text-font);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
 .button:hover {
   cursor: pointer;
-  background-color: var(--medium-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.button:focus {
+  outline: none;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
   .wrapper {
-    width: 100%;
+    width: 90%;
     margin: 10px;
+  }
+  .header h1 {
+    font-size: 1.7rem
+  }
+  .quiz-inner p {
+    text-align: justify;
+  }
+
+  .buttons {
+    width: 90%;
+  }
+  .button {
+    font-size: 1rem;
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   .wrapper {
-    width: 100%;
+    width: 90%;
     padding: 10px;
   }
  }
