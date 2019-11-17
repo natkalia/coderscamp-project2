@@ -41,7 +41,7 @@ function quizBuilder() {
 function markAnswered() {
   /* get necessary dynamically created input elements from DOM */
   const userInputsCollection = document.querySelectorAll('input[type="radio"]');
-  let userAnswersArray = Array.from(userInputsCollection);
+  const userAnswersArray = Array.from(userInputsCollection);
 
   /* add event listener to check which question is answered and change style */
   userAnswersArray.forEach( (element) => {
@@ -54,12 +54,12 @@ function markAnswered() {
 function getUserResult() {
   /* get necessary dynamically created input elements from DOM */
    const userInputsCollection = document.querySelectorAll('input[type="radio"]');
-   let userAnswersArray = Array.from(userInputsCollection);
+   const userAnswersArray = Array.from(userInputsCollection);
 
   /* create object for each user to keep his/her answers */
   function Person() {
   }
-  let person = new Person();
+  const person = new Person();
 
   /* add checked answers (based on checked input) with question numbers (based on input name equal to question number) to user object as properties */
   userAnswersArray.forEach(element => {
@@ -88,7 +88,7 @@ function getUserResult() {
   });
 
   /* change style to show good and bad answers without reference to user results */
-  let corrNumbersLetters = questionsList.map(element => { 
+  const corrNumbersLetters = questionsList.map(element => { 
     return element.questionNumber + element.correct;
   });
 
