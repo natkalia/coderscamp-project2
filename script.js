@@ -57,9 +57,7 @@ function getUserResult() {
    const userAnswersArray = Array.from(userInputsCollection);
 
   /* create object for each user to keep his/her answers */
-  function Person() {
-  }
-  const person = new Person();
+  const person = {};
 
   /* add checked answers (based on checked input) with question numbers (based on input name equal to question number) to user object as properties */
   userAnswersArray
