@@ -78,5 +78,5 @@ This is the 5th edition od the camp.
 More info about the camp: [https://coderscamp.edu.pl/](https://coderscamp.edu.pl/)
 
 ## About Hans Rosling and Factfullness concept
-It is recommended to read Hans Rosling book to better understand the factfullness concept:
+It is recommended to read Hans Rosling book to better understand the factfullness concept:\
 ![book](assets/book.jpg)
