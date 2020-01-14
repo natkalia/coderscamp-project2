@@ -16,7 +16,7 @@ The app is built with:
 ## Installation
 
 ### Online
-You can play online quiz here [https://natkalia.github.io/coderscamp-project2/](https://natkalia.github.io/coderscamp-project2/)
+You can play online quiz here [https://natkalia.github.io/factfullness-quiz-coderscamp/](https://natkalia.github.io/factfullness-quiz-coderscamp/)
 
 ### Locally
 You can download a zip archive or clone repository from Github to your local envirnoment.
