@@ -70,7 +70,7 @@ The app is not compatible with:
 
 ## Credits
 
-* Images from: [https://factfulnessquiz.com/](https://factfulnessquiz.com/)
+* Images from: [https://pexels.com/](https://pexels.com)
 * Quiz questions from: [https://factfulnessquiz.com/](https://factfulnessquiz.com/)
 
 ## About CodersCamp
