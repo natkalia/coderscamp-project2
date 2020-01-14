@@ -4,7 +4,7 @@ Individual project created for CodersCamp 2019 (Team Warsaw). :bomb:
 This is a simple single-choice quiz web application built with Javascript, HTML, CSS. 
 Quiz questions come from famous Factfulness Quiz created by Hans Rosling.
 
-**Live:** [https://natkalia.github.io/coderscamp-project2/](https://natkalia.github.io/coderscamp-project2/)
+**Live:** [https://natkalia.github.io/factfullness-quiz-coderscamp/](https://natkalia.github.io/factfullness-quiz-coderscamp/)
 	
 ## Technologies
 
@@ -23,7 +23,7 @@ You can download a zip archive or clone repository from Github to your local env
 To download zip archive just click download and unzip it locally.
 To clone you need to click clone to get repository address and run in your command line:
 ```bash
-git clone https://natkalia.github.io/coderscamp-project2/
+git clone https://github.com/natkalia/factfullness-quiz-coderscamp.git
 ```
 No further installations are required. You can just open the starter file - index.html in your favourite webbrowser.
 
